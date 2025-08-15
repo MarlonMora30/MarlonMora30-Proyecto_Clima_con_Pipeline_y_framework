@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Proyecto Clima Interactivo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white font-sans">
+
+  <!-- Contenedor -->
+  <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-2xl w-[90%] max-w-lg text-center">
+    <h1 class="text-3xl font-bold mb-6 drop-shadow-lg">🌤️ Consulta el Clima</h1>
+
+    <!-- Barra de búsqueda -->
+    <div class="flex gap-3 mb-6">
+      <input 
+        type="text" 
+        id="ciudad-input" 
+        placeholder="Escribe el nombre de la ciudad"
+        class="flex-1 px-4 py-2 rounded-lg border border-gray-300 shadow-sm text-black focus:outline-none focus:ring-2 focus:ring-blue-400"
+      />
+      <button 
+        id="btn-buscar" 
+        class="px-4 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition"
+      >Buscar</button>
+    </div>
+
+    <!-- Botones adicionales -->
+    <div class="flex gap-3 justify-center mb-6">
+      <button 
+        id="btn-guardar" 
+        disabled
+        class="px-4 py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600 transition disabled:opacity-50"
+      >Guardar</button>
+      <button 
+        id="btn-limpiar"
+        class="px-4 py-2 bg-red-500 text-white rounded-lg shadow hover:bg-red-600 transition"
+      >Limpiar</button>
+    </div>
+
+    <!-- Resultado del clima -->
+    <div 
+      id="clima-resultado"
+      class="hidden bg-white/20 rounded-xl p-6 shadow-lg transition-transform duration-300 hover:scale-105"
+    >
+      <img id="imagen-ciudad" class="w-full h-40 object-cover rounded-lg mb-4" src="" alt="Imagen de ciudad">
+      <h2 id="nombre-ciudad" class="text-2xl font-bold"></h2>
+      <p id="descripcion-clima" class="text-lg"></p>
+      <p id="temperatura" class="text-3xl font-semibold mt-2"></p>
+    </div>
+
+    <!-- Lista de ciudades guardadas -->
+    <h2 class="text-xl font-semibold mt-10">Ciudades guardadas</h2>
+    <div id="mensaje-vacio" style="display:none;" class="italic mt-2">No hay ciudades guardadas.</div>
+    <div id="ciudades-guardadas" class="flex flex-col gap-3 mt-4"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
